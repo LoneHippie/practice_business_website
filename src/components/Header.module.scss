@@ -1,0 +1,28 @@
+@import '../styles/variables';
+@import '../styles/media-queries';
+
+.header {
+    position: absolute;
+    @include respond(tablet) {
+        position: fixed;
+    }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1.5rem;
+
+    background: $color-primary-1;
+
+    z-index: 1000;
+
+    &__logo {
+        height: 65%;
+        width: auto;
+    }
+}

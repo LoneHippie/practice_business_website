@@ -1,0 +1,35 @@
+@import '../styles/media-queries';
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.section {
+    position: relative;
+    padding: $section-padding-mobile;
+
+    @include respond(laptop) {
+        padding: $section-padding-laptop;
+    }
+
+    & > h2 {
+        @include titleSection();
+    }
+}
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    & > :not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    @include respond(tablet) {
+        flex-direction: row;
+
+        & > :not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
+}

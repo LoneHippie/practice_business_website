@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'media-queries';
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(tablet) {
+        font-size: 70%;
+    }
+    @include respond(laptop) {
+        font-size: 75%;
+    }
+    @include respond(desktop) {
+        font-size: 78%;
+    }
+
+    scroll-behavior: smooth;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+:root {
+    --text-color: #121212;
+    --text-color-op: 18, 18, 18;
+    --background-color: #EEEEEE;
+    --background-color-op: 238, 238, 238;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #EEEEEE;
+        --text-color-op: 238, 238, 238;
+        --background-color: #121212;
+        --background-color-op: 18, 18, 18;
+    }
+}
+
+strong {
+    color: $color-primary-1;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: $font-body;
+    
+    background: var(--background-color);
+    color: var(--text-color);
+}

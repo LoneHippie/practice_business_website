@@ -1,0 +1,79 @@
+@import '../styles/variables';
+@import '../styles/media-queries';
+@import '../styles/mixins';
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    padding: $section-padding-mobile;
+
+    @include respond(laptop) {
+        flex-direction: row;
+        padding-left: 8%;
+    }
+}
+
+.background_vector {
+    margin: 0 auto;
+    width: auto;
+    height: 80%;
+
+    @include respond(laptop) {
+        order: 2;
+        height: auto;
+        width: 50%;
+    }
+
+    & > img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    @include respond(laptop) {
+        order: 1;
+        width: 50%;
+    }
+
+    & > h2 {
+        @include titleSection();
+
+        @include respond(laptop) {
+            width: calc(100% + 87.5%);
+        }
+    }
+}
+
+.text_container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    & > h3 {
+        @include titleTextGroup();
+    }
+
+    & > p {
+        @include paragraph();
+    }
+}
+
+.list_container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 3.5rem;
+    margin-top: 2rem;
+
+    @include respond(tablet) {
+        grid-template-columns: repeat(2, auto);
+    }
+    @include respond(laptop) {
+        grid-template-columns: auto;
+    }
+}
